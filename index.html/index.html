@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\User\OneDrive\Desktop\Product-Quantity-Counter-32-\pages\style.css">
+    <title>Product quality Increment/Decrement</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="product-container">
+            <img src="C:\Users\User\OneDrive\Desktop\Product-Quantity-Counter-32-\img\product2.PNG" class="product-img">
+            <h2>Apple iPhone 15 Pro Max (1 TB) - Black Titanium</h2>
+            <h3> Price : ₹1,89,400</h3>
+            <div class="product-counter">
+                <img src="C:\Users\User\OneDrive\Desktop\Product-Quantity-Counter-32-\img\plus.png" class="count-img" onclick="QuantityHandler(`inc`)">
+                <span id="count-value">1</span>
+                <img src="C:\Users\User\OneDrive\Desktop\Product-Quantity-Counter-32-\img\minus.png" class="count-img" onclick="QuantityHandler(`dec`)">
+            </div>
+            <button type="button" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        function QuantityHandler(action)
+        {
+             const QuantityElement = document.getElementById("count-value")
+             let Quantity = parseInt(QuantityElement.innerText);
+             if(Quantity ==1 && action== "dec")
+             {
+                        alert(`Quantity cannot be less than "1"`)
+             }
+             else if(Quantity==10 && action == "inc")
+             {
+                alert(`Quantity cannot be more than "10"`)
+
+             }
+             QuantityElement.innerText= action == "inc" ? ++Quantity : --Quantity;
+        }
+    </script>
+</body>
+
+</html>
